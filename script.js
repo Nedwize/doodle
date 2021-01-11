@@ -50,6 +50,7 @@ window.addEventListener("load", () => {
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", finishedPosition);
     canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("mouseleave", finishedPosition);
     thicknessInput.addEventListener("change", changeThickness);
     colorInput.addEventListener("change", changeColor);
 })
