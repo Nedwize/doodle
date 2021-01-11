@@ -8,3 +8,10 @@
   border: 2px solid black;
   cursor: crosshair;
 }
+
+form {
+  position: absolute;
+  width: 350px;
+  background: rgb(148, 148, 148);
+  padding: 10px;
+}
