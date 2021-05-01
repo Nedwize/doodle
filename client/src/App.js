@@ -8,8 +8,8 @@ import PlayersBar from "./components/PlayersBar";
 import CanvasContainer from "./components/CanvasContainer";
 import ChatBox from "./components/ChatBox";
 import Footer from "./components/Footer";
-import PaletteContainer from "./components/PaletteContainer";
-import ColorInput from "./components/ColorInput";
+
+import Palette from "./components/Palette";
 import { useState } from "react";
 
 function App() {
@@ -32,9 +32,11 @@ function App() {
         <ChatBox />
       </PlayAreaContainer>
       <Footer>
-        <PaletteContainer>
-          <ColorInput onChange={(e) => setBrushColor(e.target.value)} />
-        </PaletteContainer>
+        <Palette
+          setColor={(e) => {
+            setBrushColor(e);
+          }}
+        />
       </Footer>
     </Wrapper>
   );
