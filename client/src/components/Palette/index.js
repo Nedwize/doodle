@@ -2,6 +2,8 @@ import PaletteContainer from "./PaletteContainer";
 import ColorInput from "./ColorInput";
 import ColorBlock from "./ColorBlock";
 import Container from "../Container";
+import { useState } from "react";
+import SelectedColorBlock from "./SelectedColorBlock";
 
 const lightColors = [
   "#fff",
@@ -32,33 +34,45 @@ const darkColors = [
 ];
 
 const Palette = ({ setColor }) => {
+  const [selectedColor, setSelectedColor] = useState("#000");
+
+  const handleColorSelect = (color) => {
+    setSelectedColor(color);
+    setColor(color);
+  };
+
   return (
     <PaletteContainer>
       <Container>
-        <ColorInput onChange={setColor} />
+        <SelectedColorBlock color={selectedColor} />
       </Container>
-
-      <Container>
-        {lightColors.map((color, i) => {
-          return (
-            <ColorBlock
-              color={color}
-              key={i}
-              onClick={(e) => setColor(e.target.getAttribute("color"))}
-            />
-          );
-        })}
-      </Container>
-      <Container>
-        {darkColors.map((color, i) => {
-          return (
-            <ColorBlock
-              color={color}
-              key={i}
-              onClick={(e) => setColor(e.target.getAttribute("color"))}
-            />
-          );
-        })}
+      <Container column>
+        <Container>
+          {lightColors.map((color, i) => {
+            return (
+              <ColorBlock
+                color={color}
+                key={i}
+                onClick={(e) =>
+                  handleColorSelect(e.target.getAttribute("color"))
+                }
+              />
+            );
+          })}
+        </Container>
+        <Container>
+          {darkColors.map((color, i) => {
+            return (
+              <ColorBlock
+                color={color}
+                key={i}
+                onClick={(e) =>
+                  handleColorSelect(e.target.getAttribute("color"))
+                }
+              />
+            );
+          })}
+        </Container>
       </Container>
     </PaletteContainer>
   );
