@@ -1,6 +1,7 @@
 import PaletteContainer from "./PaletteContainer";
 import ColorBlock from "./ColorBlock";
 import BrushRadiusBlock from "./BrushRadiusBlock";
+import Button from "./Button";
 import Container from "../Container";
 import { useState } from "react";
 import SelectedColorBlock from "./SelectedColorBlock";
@@ -89,8 +90,8 @@ const Palette = ({ setColor, clearCanvas, undoCanvas, setRadius }) => {
           );
         })}
       </Container>
-      <button onClick={clearCanvas}>Clear</button>
-      <button onClick={undoCanvas}>Undo</button>
+      <Button onClick={clearCanvas}>Clear</Button>
+      <Button onClick={undoCanvas}>Undo</Button>
     </PaletteContainer>
   );
 };
