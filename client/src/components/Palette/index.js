@@ -1,6 +1,6 @@
 import PaletteContainer from "./PaletteContainer";
-import ColorInput from "./ColorInput";
 import ColorBlock from "./ColorBlock";
+import BrushRadiusBlock from "./BrushRadiusBlock";
 import Container from "../Container";
 import { useState } from "react";
 import SelectedColorBlock from "./SelectedColorBlock";
@@ -33,7 +33,9 @@ const darkColors = [
   "#63300d",
 ];
 
-const Palette = ({ setColor, clearCanvas, undoCanvas }) => {
+const brushSizes = [4, 7, 10, 12, 15];
+
+const Palette = ({ setColor, clearCanvas, undoCanvas, setRadius }) => {
   const [selectedColor, setSelectedColor] = useState("#000");
 
   const handleColorSelect = (color) => {
@@ -73,6 +75,19 @@ const Palette = ({ setColor, clearCanvas, undoCanvas }) => {
             );
           })}
         </Container>
+      </Container>
+      <Container>
+        {brushSizes.map((thickness, i) => {
+          return (
+            <BrushRadiusBlock
+              value={thickness}
+              key={i}
+              onClick={(e) =>
+                setRadius(parseInt(e.target.getAttribute("value"), 10))
+              }
+            />
+          );
+        })}
       </Container>
       <button onClick={clearCanvas}>Clear</button>
       <button onClick={undoCanvas}>Undo</button>

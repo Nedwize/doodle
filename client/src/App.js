@@ -13,6 +13,7 @@ import { useState } from "react";
 
 function App() {
   const [brushColor, setBrushColor] = useState("#000");
+  const [brushRadius, setBrushRadius] = useState(10);
   const [saveableCanvas, setSaveableCanvas] = useState("");
 
   return (
@@ -27,6 +28,7 @@ function App() {
             canvasHeight={"75vh"}
             gridColor={"rgba(150,150,150,0.2)"}
             brushColor={brushColor}
+            brushRadius={brushRadius}
             ref={(canvasDraw) => setSaveableCanvas(canvasDraw)}
           />
         </CanvasContainer>
@@ -42,6 +44,9 @@ function App() {
           }}
           undoCanvas={() => {
             saveableCanvas.undo();
+          }}
+          setRadius={(e) => {
+            setBrushRadius(e);
           }}
         />
       </Footer>
