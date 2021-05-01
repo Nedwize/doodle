@@ -1,4 +1,3 @@
-import Demo from "./components/Canvas";
 import CanvasDraw from "react-canvas-draw";
 
 import Wrapper from "./components/Wrapper";
@@ -14,6 +13,7 @@ import { useState } from "react";
 
 function App() {
   const [brushColor, setBrushColor] = useState("#000");
+  const [saveableCanvas, setSaveableCanvas] = useState("");
 
   return (
     <Wrapper>
@@ -27,6 +27,7 @@ function App() {
             canvasHeight={"75vh"}
             gridColor={"rgba(150,150,150,0.2)"}
             brushColor={brushColor}
+            ref={(canvasDraw) => setSaveableCanvas(canvasDraw)}
           />
         </CanvasContainer>
         <ChatBox />
@@ -35,6 +36,12 @@ function App() {
         <Palette
           setColor={(e) => {
             setBrushColor(e);
+          }}
+          clearCanvas={() => {
+            saveableCanvas.clear();
+          }}
+          undoCanvas={() => {
+            saveableCanvas.undo();
           }}
         />
       </Footer>

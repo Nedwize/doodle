@@ -7,7 +7,7 @@ export default styled.div`
   align-items: center;
   height: 13vh;
   width: 60vw;
-  margin-left: 13em;
+  margin-left: 15vw;
   /* border: 1px solid grey; */
   border-radius: 5px;
 `;

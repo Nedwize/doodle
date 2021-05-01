@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export default styled.div`
   background-color: ${(props) => props.color};
-  height: 3em;
-  width: 3em;
+  height: 2.5em;
+  width: 2.5em;
   cursor: pointer;
   border: 3px solid white;
   border-radius: 50%;

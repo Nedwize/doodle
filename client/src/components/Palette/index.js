@@ -33,7 +33,7 @@ const darkColors = [
   "#63300d",
 ];
 
-const Palette = ({ setColor }) => {
+const Palette = ({ setColor, clearCanvas, undoCanvas }) => {
   const [selectedColor, setSelectedColor] = useState("#000");
 
   const handleColorSelect = (color) => {
@@ -74,6 +74,8 @@ const Palette = ({ setColor }) => {
           })}
         </Container>
       </Container>
+      <button onClick={clearCanvas}>Clear</button>
+      <button onClick={undoCanvas}>Undo</button>
     </PaletteContainer>
   );
 };
