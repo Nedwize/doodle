@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default styled.div`
-  background-color: lightgrey;
+  background-color: lightgray;
   display: flex;
   flex-direction: row;
   margin-top: 8vh;
