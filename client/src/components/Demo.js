@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 
 import CanvasDraw from "react-canvas-draw";
 import classNames from "../index.css";

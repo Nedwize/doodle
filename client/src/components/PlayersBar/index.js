@@ -1,6 +1,6 @@
 import PlayerCard from "./PlayerCard";
 import Bar from "./Bar";
-import Container from "../Container";
+// import Container from "../Container";
 
 const PlayersBar = () => {
   return (
