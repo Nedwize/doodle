@@ -4,7 +4,7 @@ import Wrapper from "./components/Wrapper";
 import Nav from "./components/Nav";
 import PlayAreaContainer from "./components/PlayAreaContainer";
 import CanvasContainer from "./components/CanvasContainer";
-import ChatBox from "./components/ChatBox";
+import ChatBox from "./components/Chat/index";
 import Footer from "./components/Footer";
 
 import Palette from "./components/Palette";

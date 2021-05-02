@@ -16,3 +16,27 @@ code {
 ::-moz-color-swatch {
   border-color: transparent;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: rgb(206, 206, 206);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(206, 206, 206);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
