@@ -9,18 +9,19 @@ import ChatBox from "./components/ChatBox";
 import Footer from "./components/Footer";
 
 import Palette from "./components/Palette";
+import Players from "./components/PlayersBar/index";
 import { useState } from "react";
 
 function App() {
   const [brushColor, setBrushColor] = useState("#000");
-  const [brushRadius, setBrushRadius] = useState(10);
+  const [brushRadius, setBrushRadius] = useState(7);
   const [saveableCanvas, setSaveableCanvas] = useState("");
 
   return (
     <Wrapper>
       <Nav />
       <PlayAreaContainer>
-        <PlayersBar />
+        <Players />
         <CanvasContainer>
           <CanvasDraw
             onChange={() => console.log("onChange")}
