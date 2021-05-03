@@ -10,14 +10,15 @@ export default styled.button`
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 24px;
+  font-size: 18px;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
   transition: 200ms;
+  box-shadow: 0 5px 10px 0 hsl(0deg 0% 10% / 25%);
 
   &:hover {
-    background-color: #146ca4;
-    border: 2px solid #146ca4;
+    background-color: blueviolet;
+    border: 2px solid blueviolet;
   }
 `;

@@ -4,15 +4,42 @@ import HeaderContainer from "./HeaderContainer";
 import Text from "./Text";
 import Button from "./Button";
 import InputBox from "./InputBox";
+import Container from "../Container";
+import { useState } from "react";
 
 const JoinPage = () => {
-  const generateRandom = () => {
-    const num = Math.floor(Math.random() * 30 + 10);
-    return num.toString();
-  };
-  const generateSign = () => {
-    const sign = Math.floor(Math.random() * 10 + 1) > 5 ? "-" : "+";
-    return sign;
+  const [showForm, setShowForm] = useState("null");
+
+  const renderForms = () => {
+    if (showForm === "null") {
+      return (
+        <Container column>
+          <Button onClick={() => setShowForm("join")}>Join PlayRoom</Button>
+          <Button onClick={() => setShowForm("create")}>Create PlayRoom</Button>
+        </Container>
+      );
+    } else if (showForm === "join") {
+      return (
+        <Container column>
+          <InputBox placeholder="Enter your name" />
+          <InputBox placeholder="Enter PlayRoom ID" />
+          <Button>Play!</Button>
+          <a style={{ cursor: "pointer" }} onClick={() => setShowForm("null")}>
+            Go Back
+          </a>
+        </Container>
+      );
+    } else if (showForm === "create") {
+      return (
+        <Container column>
+          <InputBox placeholder="Enter your name" />
+          <Button>Play!</Button>
+          <a style={{ cursor: "pointer" }} onClick={() => setShowForm("null")}>
+            Go Back
+          </a>
+        </Container>
+      );
+    }
   };
 
   const randomColor = () => {
@@ -73,14 +100,19 @@ const JoinPage = () => {
             E
           </Text>
         </HeaderContainer>
-        {/* <Button>Join PlayRoom</Button> */}
-        {/* <Button>Create PlayRoom</Button> */}
-        <InputBox placeholder="Enter your name" />
-        <InputBox placeholder="Enter PlayRoom ID" />
-        <Button>Play!</Button>
+        {renderForms()}
       </FormContainer>
     </Wrapper>
   );
+};
+
+const generateRandom = () => {
+  const num = Math.floor(Math.random() * 30 + 10);
+  return num.toString();
+};
+const generateSign = () => {
+  const sign = Math.floor(Math.random() * 10 + 1) > 5 ? "-" : "+";
+  return sign;
 };
 
 export default JoinPage;
