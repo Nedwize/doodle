@@ -3,6 +3,7 @@ import FormContainer from "./FormContainer";
 import HeaderContainer from "./HeaderContainer";
 import Text from "./Text";
 import Button from "./Button";
+import InputBox from "./InputBox";
 
 const JoinPage = () => {
   const generateRandom = () => {
@@ -72,8 +73,11 @@ const JoinPage = () => {
             E
           </Text>
         </HeaderContainer>
-        <Button>Join PlayRoom</Button>
-        <Button>Create PlayRoom</Button>
+        {/* <Button>Join PlayRoom</Button> */}
+        {/* <Button>Create PlayRoom</Button> */}
+        <InputBox placeholder="Enter your name" />
+        <InputBox placeholder="Enter PlayRoom ID" />
+        <Button>Play!</Button>
       </FormContainer>
     </Wrapper>
   );

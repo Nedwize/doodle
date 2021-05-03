@@ -14,9 +14,10 @@ export default styled.button`
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  transition: 500ms;
+  transition: 200ms;
 
   &:hover {
-    background-color: dodgerblue;
+    background-color: #146ca4;
+    border: 2px solid #146ca4;
   }
 `;
