@@ -9,6 +9,7 @@ import { useState } from "react";
 
 const JoinPage = () => {
   const [showForm, setShowForm] = useState("null");
+  const doodle = "DOODLE";
 
   const renderForms = () => {
     if (showForm === "null") {
@@ -24,7 +25,11 @@ const JoinPage = () => {
           <InputBox placeholder="Enter your name" />
           <InputBox placeholder="Enter PlayRoom ID" />
           <Button>Play!</Button>
-          <a style={{ cursor: "pointer" }} onClick={() => setShowForm("null")}>
+          <a
+            href="#"
+            style={{ cursor: "pointer" }}
+            onClick={() => setShowForm("null")}
+          >
             Go Back
           </a>
         </Container>
@@ -34,7 +39,11 @@ const JoinPage = () => {
         <Container column>
           <InputBox placeholder="Enter your name" />
           <Button>Play!</Button>
-          <a style={{ cursor: "pointer" }} onClick={() => setShowForm("null")}>
+          <a
+            href="#"
+            style={{ cursor: "pointer" }}
+            onClick={() => setShowForm("null")}
+          >
             Go Back
           </a>
         </Container>
@@ -63,42 +72,16 @@ const JoinPage = () => {
           <h3 style={{ marginBottom: "2px", color: "#404040" }}>Welcome to</h3>
         </HeaderContainer>
         <HeaderContainer>
-          <Text
-            color={randomColor()}
-            rotation={`rotate(${generateSign()}${generateRandom()}deg)`}
-          >
-            D
-          </Text>
-          <Text
-            color={randomColor()}
-            rotation={`rotate(${generateSign()}${generateRandom()}deg)`}
-          >
-            O
-          </Text>
-          <Text
-            color={randomColor()}
-            rotation={`rotate(${generateSign()}${generateRandom()}deg)`}
-          >
-            O
-          </Text>
-          <Text
-            color={randomColor()}
-            rotation={`rotate(${generateSign()}${generateRandom()}deg)`}
-          >
-            D
-          </Text>
-          <Text
-            color={randomColor()}
-            rotation={`rotate(${generateSign()}${generateRandom()}deg)`}
-          >
-            L
-          </Text>
-          <Text
-            color={randomColor()}
-            rotation={`rotate(${generateSign()}${generateRandom()}deg)`}
-          >
-            E
-          </Text>
+          {[...doodle].map((element) => {
+            return (
+              <Text
+                color={randomColor()}
+                rotation={`rotate(${generateSign()}${generateRandom()}deg)`}
+              >
+                {element}
+              </Text>
+            );
+          })}
         </HeaderContainer>
         {renderForms()}
       </FormContainer>
